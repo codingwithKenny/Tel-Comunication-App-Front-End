@@ -1,0 +1,87 @@
+.bigContainer{
+    background-image: linear-gradient(50deg,#00595F, white 60%,#00595F);
+    background-repeat: no-repeat;
+    background-size: cover;
+   padding: 5px;
+    overflow: hidden;
+}
+.formcont{
+    display: flex;
+    justify-content: center;
+    margin: 150px auto 105px;
+    border-radius: 10px ;
+    box-shadow: 2px 2px 2px 2px grey;
+    width: 700px;
+    
+
+}
+.formleft{
+    width: 400px;
+    height: auto;
+    border-radius: 10px 0 0 10px;
+    background-image: url("/public/backGroundImage.jpg");
+    background-size: cover;
+    animation: slid2 .5s linear;
+
+}
+@keyframes slid2{
+    0%{
+        transform: translateX(400px);
+
+    }
+    100%{
+        transform: translateX(00px);
+
+    }
+}
+.formRight{
+    padding: 40px 20px;
+    width: 400px;
+    border-radius: 0 10px 10px;
+}
+.signupText{
+    margin-left: 100px;
+    color: #00595F;
+}
+.submitButton{
+    margin: 20px 0 20px 110px;
+    background-color: #00595F;
+}
+
+
+/* MEDIA QUERY */
+@media (max-width: 768px) {
+    .bigContainer{
+        height: 100vh;
+    }
+    .formcont{
+        display: block;
+        width: 400px;
+        border-radius: 0;
+    }
+    .formleft{
+        display: none;
+    }
+    .formRight{
+    background-color: white;
+    border-radius: 0;
+  }
+  .formsidebtn{
+    margin-top:10px;
+    margin-left: 150px;
+  }
+  .signupText{
+    margin-left: 150px;
+    display: none;
+    
+}
+.submitButton{
+    margin: 20px 0 20px 120px;
+    background-color: #00595F;
+}
+
+  }
+  
+  
+  
+  

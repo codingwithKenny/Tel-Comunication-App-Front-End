@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.roy{
+    background-color: #00595F;
+    padding: 10px 0 10px 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    box-shadow: 2px 1px 2px 1px #1d4444;
+    top: 0;
+    
+
+
+}
+
+
+/* MEDIA QUERY */
+
+@media(max-width: 768px) {
+    .roy {
+        padding: 10px 0;
+        text-align: center; 
+    }
+}

@@ -1,0 +1,58 @@
+.history {
+    background-color: transparent;
+    box-shadow: 2px 2px 2px 2px grey;
+    padding: 20px 30px;
+    width: 428px;
+    z-index: -1000;
+    margin: 20px auto;
+}
+
+.history table {
+    width: 200px;
+    border: 0;
+    margin-top:10px ;
+
+    
+}
+
+.history th, .history td {
+    padding:5px 20px;
+    text-align: center;
+    font-size: 10px;
+    
+}
+.history tr:nth-of-type(2){
+    margin-top: 10px;
+}
+
+.history thead {
+    background-color: #00595F;
+
+}
+.history a{
+    color:#00595F;
+    float: inline-end;
+    font-size: 10px;
+}
+.history span{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+}
+
+.history thead th:nth-of-type(1){
+    border-radius: 20px 0 0 20px;
+}
+.history thead th:nth-of-type(3){
+    border-radius:0;
+}
+.history thead th:nth-of-type(4){
+    border-radius: 0 20px 20px 0;
+}
+
+.history thead th {
+    border: 0;
+    color: white;
+    font-size: 12px ;
+    border-spacing:0 ;
+}

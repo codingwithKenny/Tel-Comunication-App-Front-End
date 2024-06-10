@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.whatRoyDO{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin-left: 320px;
+    margin-top: 20px;
+    
+}
+.eachBox{
+    background-color:rgb(1, 150, 150);
+    background-image: linear-gradient(20deg,rgb(173, 238, 238), teal);
+    text-align: center;
+    padding: 10px 30px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+   
+
+}
+
+.eachBox p{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.eachBox img{
+    margin-top: -10px;
+    width: 200px;
+    height: 80px;
+}
+
+
+
+@media (max-width: 768px) {
+    .whatRoyDO {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+        position: absolute;
+        margin-top: -1680px;
+        z-index: -20;
+       
+    }
+
+    .eachBox {
+        width: 50%;
+        margin-left: 10%;
+        padding: 10px 20px;
+      
+    }
+
+    .eachBox img {
+        width: 100%;
+        height: auto;
+    }
+    .whatRoyDO:nth-of-type(2){
+        margin-top: -930px;
+    }
+}

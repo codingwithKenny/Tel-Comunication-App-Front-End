@@ -1,0 +1,44 @@
+.Airtimeform{
+    width: 300px;
+    margin-left: 550px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 2px grey;
+    color: teal;
+}
+.submitButton{
+    margin-left: 0;
+}
+.spinner {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+    .Airtimeform {
+        width: 65%;
+        margin-left: 120px; 
+        margin-right: auto; 
+        margin-top: -2400px; 
+        padding: 15px; 
+        box-shadow: 1px 1px 1px 1px grey; 
+        position: absolute;
+        /* z-index: -20; */
+    }
+
+    .submitButton {
+        margin-left: 0; 
+    }
+
+    .spinner {
+        margin-top: 20px;
+        font-size: 14px; 
+        color: #333;
+        text-align: center; 
+    }
+}

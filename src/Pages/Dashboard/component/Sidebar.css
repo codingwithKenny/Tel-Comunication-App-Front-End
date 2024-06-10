@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebarContainer {
+    background-color: #00595F;
+    width: 308px;
+    height: 600px;
+    position: fixed;
+    z-index: 0; 
+    color: white;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    margin-top: -5px;
+    padding-top: 70px;
+    
+   
+}
+
+.iconContainer {
+    position: fixed;
+    z-index: 2; 
+    top: 20px;
+    left: 20px;
+}
+
+#xbarIcon{
+    font-size: 20px;
+    color: white;
+    display: none;
+}
+
+#menubarIcon {
+    font-size: 20px;
+    color: white;
+}
+
+.top {
+    margin-top: -50px;
+    display: block;
+    padding-top: 20px;
+}
+
+.top li {
+    margin-top: 30px;
+}
+
+.sidebardown {
+    display: block;
+    margin-top: 100px;
+}
+
+.sidebardown li {
+    margin-top: 30px;
+}
+
+.sidebarContainer i {
+    margin: 0 10px;
+    color: white;
+}
+
+.mobilebar {
+    padding-top: 35px;
+    width: 100px;
+    visibility: hidden;
+    overflow: hidden;
+    color: white;
+    background-color: #00595F;
+}
+
+.mobilebar ul li {
+    margin-top: 30px;
+}
+
+.mobilebar li i {
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.fix {
+    position: fixed;
+    overflow: hidden;
+}
+
+
+
+@media(max-width:764px){
+    .mobilebar{
+        height: 2500px;
+    }
+    .sidebarContainer{
+        width: 100%;
+        height: 680px;
+    }
+    #xbarIcon{
+        display: block;
+    }
+    .mobilebar{
+        visibility: visible;
+    }
+}

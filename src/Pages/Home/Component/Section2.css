@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section2Container{
+    background-color: #00595F;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    
+    
+}
+.section2Container h1{
+    margin: 40px 0 5px 0;
+}
+.section2Container hr{
+    width: 100px;
+    margin-left:560px;
+    background-color: white;
+
+}
+.section2Container p{
+    padding:0 200px;
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+
+/* For devices with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+    .section2Container {
+        padding: 10px;
+        margin-top: 45px;
+    }
+    .section2Container h1 {
+        margin: 20px 0 5px 0;
+        font-size: 24px; /* Adjust font size as needed */
+    }
+    .section2Container hr {
+        width: 150px;
+        margin-left: 100px;
+        
+    }
+    .section2Container p {
+        padding: 0 20px;
+    }
+}

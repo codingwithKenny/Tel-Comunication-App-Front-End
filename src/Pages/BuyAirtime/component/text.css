@@ -1,0 +1,23 @@
+.text{
+     margin: 50px 0 0 600px;
+     font-size: 40px;
+     font-weight: 500;
+     color: teal;
+     font-family: "Poppins", sans-serif;
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    .text {
+        /* margin: 20px auto;  */
+        margin-top: -2450px;
+        position: absolute;
+        margin-left: 130px;
+        font-size: 20px;
+        
+    }
+}
+

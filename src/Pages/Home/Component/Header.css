@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+
+  }
+  
+  .bars a {
+    margin: 0 10px;
+    padding-bottom: 3px;
+    text-decoration: none;
+    color: #00595F;
+    text-align: center;
+    position: relative;
+  }
+  
+  .bars a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    background: #57d0d8;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .bars a:hover::after {
+    transform: scaleX(1);
+  }
+  .bar{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+   }
+  .regButton button {
+    margin-left: 20px;
+    background-color: #00595F;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 0;
+    color: white;
+  
+  }
+  .navitemmobile {
+    visibility: hidden;
+    background-color: #00595F;
+    margin: 10px 0 0 -35px;
+    width: 100%;
+    font-size: 15px;
+    position: absolute;
+    animation: slider .8s linear;
+  }
+  @keyframes slider{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+  }
+  .navitemmobile li{
+    list-style-type: none;
+    margin: 20px;
+   
+  }
+  #menuicon{
+    display: none;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  #xicon{
+    margin-left: 20px;
+    font-size: 30px;
+  }
+
+  
+  /* MEDIA QUERY */
+  
+  @media (max-width: 400px) {
+    .bars {
+      display: none;
+    }
+    .logo {
+      display: none;
+    }
+    #menuicon {
+      display: block;
+    }
+    .navitemmobile {
+      visibility: visible;
+    }
+  }
+  
