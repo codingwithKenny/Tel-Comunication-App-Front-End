@@ -18,6 +18,7 @@
     "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "lucide-react": "^0.379.0",
     "paystack": "^2.0.1",

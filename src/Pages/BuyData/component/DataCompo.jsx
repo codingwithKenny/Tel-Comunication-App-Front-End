@@ -62,23 +62,13 @@ const Datacompo = () => {
             });
            
            
-           console.log(planPrice,'hey')
+        //    console.log(planPrice,'hey')
            setPrice(planPrice)
 
              if (planPrice !== null) {
             form.setValue('amount', planPrice);
           }
           }
-        
-        
-        
-
-        if(e.target.name === "amount"){
-          const price = e.target.value
-          // let price = amount
-          console.log(price,'hey',amount)
-         }
-        
        } catch (error) {
         console.log(error)
        }

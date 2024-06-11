@@ -1,3 +1,5 @@
+import { useGetCurrentUser } from '@/Shared/hook/useGetCurrentUser';
+import { useToast } from '@/components/ui/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
@@ -11,6 +13,8 @@ const dataInputSchema = z.object({
   });
 const useGetData = () => {
   const [isloading,setisloading] = useState()
+  const {currentUser}= useGetCurrentUser()
+  const { toast } = useToast();
 
     const form = useForm({
         resolver: zodResolver(dataInputSchema)
@@ -20,6 +24,7 @@ const useGetData = () => {
   function onSubmit(data) {
     console.log(data)
     checkNetwork(data)
+    payWithPaystack()
     
   }
   // CONFIRM NETWORK
@@ -42,9 +47,94 @@ const useGetData = () => {
     }
   }
 
+  // MAKE PAYMENT
+  function payWithPaystack() {
+    try {
+      let values = form.getValues();
+      let network_id = values.network.toLowerCase().split(" ")[0];
+      let amount = values.amount.slice(1);
+      // let amountToBuy = values.amount;
+      let variation_id = values.plan
+      let phone = values.phonenumber;
+      let userEmail = currentUser.email;
+      let UserId = currentUser._id
+  
+      console.log('Initiating Paystack payment with:', { phone, network_id, userEmail, amount,variation_id,UserId });
+      console.log(UserId)
+  
+      if (window.PaystackPop) {
+        let handler = window.PaystackPop.setup({
+          key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
+          email: userEmail,
+          amount: amount* 100,
+          ref: Math.floor(Math.random() * 1000000000 + 1),
+          onClose: function() {
+            console.log("window closed");
+          },
+          callback: function(response) {
+            let res = 'Payment complete! Reference: ' + response.reference;
+            alert(res);
+            console.log('Paystack response:', response);
+            console.log('Calling purchaseData with:', { phone, network_id, amount,UserId});
+            purchaseData(phone, network_id, variation_id,UserId);
+          }
+        });
+        handler.openIframe();
+      }
+    } catch (error) {
+      console.log('Error in payWithPaystack:', error);
+    }
+  }
+  async function purchaseData(phone, network_id,variation_id, UserId) {
+    setisloading(true);
+    try {
+        const username = import.meta.env.VITE_VTU_USERNAME;
+        const password = import.meta.env.VITE_VTU_PASSWORD;
+        const url = `https://vtu.ng/wp-json/api/v1/data?username=${username}&password=${password}&phone=${phone}&network_id=${network_id}&variation_id=${variation_id}&currentUserId=${UserId}`;
+  
+        console.log('Purchasing data with:', { username, password, phone, network_id, variation_id, UserId });
+  
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json(); 
+        console.log('data purchase response:', data, data.message);
+        if(data?.code == "E"){
+            console.log('Data delivered sucessfully')
+        }
+        toast({
+          title: data?.code,
+          description: data.message
+      });
+    
+        // const transaction = {
+        //     UserId,
+        //     network:data.data.network,
+        //     amount:data.data.amount,
+        //     code:data.code||error,
+        //     phone:data.data.phone
+        // }
+        // console.log(transaction)
+        // const saveResponse = await axios.post("http://localhost:3000/Airtime", transaction); 
+        // console.log(saveResponse)
+      
+        setisloading(false);
+    } catch (error) {
+        console.error('Error purchasing airtime:', error);
+        toast({
+            title: 'Error',
+            description: error.message
+        });
+        setisloading(false);
+    }
+  }
+  
+
   return { onSubmit,
             form,
-            checkNetwork
+            checkNetwork,
+            payWithPaystack
         }
   
 }

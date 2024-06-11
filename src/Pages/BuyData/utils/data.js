@@ -88,7 +88,7 @@ export const DataInput = [
     {
         label: 'Amount',
         name: "amount",
-        type: "number",
+        type: "text",
         required: true,
         // readOnly: true
     },
