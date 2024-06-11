@@ -1,5 +1,6 @@
 import React from 'react'
 import "./FourthSection.css"
+import { Link } from 'react-router-dom'
 
 
 const FourthSection = () => {
@@ -20,8 +21,10 @@ const FourthSection = () => {
             <p>Bulk sms</p>
         </div>
         <div className='eachBox' >
-            <img src="5.png" alt="" />
+           <Link to={'/dashboard/electricity'}>
+           <img src="5.png" alt="" />
             <p>Buy Electricty</p>
+           </Link>
         </div>
        
       

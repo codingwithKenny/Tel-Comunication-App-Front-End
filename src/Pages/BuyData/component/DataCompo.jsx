@@ -9,6 +9,7 @@ import "./Datacompo.css"
 const Datacompo = () => {
     const { onSubmit, form, checkNetwork,isLoading ,payWithPaystack} = useGetData();
     const [isNetworkFilled, setIsNetworkFilled] = useState(false);
+    const[network,setisnetwork] = useState()
     const [price,setPrice] =useState(null)
 
     // WHEN PHONENUMBER BOX IS FILLED,NETWORK IS GENERATED
@@ -47,6 +48,12 @@ const Datacompo = () => {
             DataInput.forEach(el => {
               if(el.name === 'plan'){
                 el.options.forEach(opt =>{
+                    console.log(opt.label)
+                    console.log(isNetworkFilled)
+                    if(form.getValues().network = opt.label){
+                        console.log('yes')
+                   
+                    }
                   opt.options.forEach(optopt =>{
                     if(optopt.value === planValue){
                       planPrice = '#' + optopt.price

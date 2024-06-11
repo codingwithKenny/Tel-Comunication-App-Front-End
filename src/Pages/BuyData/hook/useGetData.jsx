@@ -100,9 +100,6 @@ const useGetData = () => {
         }
         const data = await response.json(); 
         console.log('data purchase response:', data, data.message);
-        if(data?.code == "E"){
-            console.log('Data delivered sucessfully')
-        }
         toast({
           title: data?.code,
           description: data.message

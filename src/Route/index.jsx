@@ -10,6 +10,7 @@ import Dashboard from "@/Pages/Dashboard";
 import Airtime from "@/Pages/BuyAirtime";
 import AirtimeHistory from "@/Pages/BuyAirtime/component/AirtimeHistory";
 import Data from "@/Pages/BuyData";
+import Electricity from "@/Pages/Electricity";
 
 
 export const route = createBrowserRouter([
@@ -60,6 +61,10 @@ export const route = createBrowserRouter([
             {
                 path:"buydata",
                 element:<Data/>
+            },
+            {
+                path:"electricity",
+                element:<Electricity/>
             },
         ]
     }
