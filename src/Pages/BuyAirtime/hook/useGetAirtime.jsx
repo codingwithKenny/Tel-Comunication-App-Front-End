@@ -87,7 +87,7 @@ const useGetAirtime = () => {
             alert(res);
             console.log('Paystack response:', response);
             console.log('Calling purchaseAirtime with:', { phone, network_id, amount: Pay, amountToBuy ,UserId});
-            purchaseAirtime(phone, network_id, amountToBuy,UserId);
+            purchaseAirtime(phone, network_id, amountToBuy,UserId, response.reference);
           }
         });
         handler.openIframe();
@@ -99,7 +99,7 @@ const useGetAirtime = () => {
 
   // HANDLE AIRTIME PURCHASE
 // HANDLE AIRTIME PURCHASE
-async function purchaseAirtime(phone, network_id, amountToBuy, UserId) {
+async function purchaseAirtime(phone, network_id, amountToBuy, UserId, paymentReference) {
   setisloading(true);
   try {
       const username = import.meta.env.VITE_VTU_USERNAME;
@@ -137,10 +137,46 @@ async function purchaseAirtime(phone, network_id, amountToBuy, UserId) {
           title: 'Error',
           description: error.message
       });
+      // Call refund function
+      refundPayment(paymentReference, amount);
+      console.log(paymentReference,amount)
       setisloading(false);
   }
 }
+   // HANDLE REFUND
+   async function refundPayment(reference, amount) {
+    try {
+      const url = `https://api.paystack.co/refund`;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_PAYSTACK_SECRET_KEY}`
+        },
+        body: JSON.stringify({
+          transaction: reference,
+          amount: amount * 100
+        })
+      });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Refund response:', data);
+      toast({
+        title: 'Refund Initiated',
+        description: `Refund for transaction ${reference} has been initiated.`
+      });
+    } catch (error) {
+      console.error('Error initiating refund:', error);
+      toast({
+        title: 'Refund Error',
+        description: error.message
+      });
+    }
+  }
   return {
     onSubmit,
     form,

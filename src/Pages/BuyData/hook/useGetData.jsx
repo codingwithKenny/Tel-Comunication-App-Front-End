@@ -76,7 +76,7 @@ const useGetData = () => {
             alert(res);
             console.log('Paystack response:', response);
             console.log('Calling purchaseData with:', { phone, network_id, amount,UserId});
-            purchaseData(phone, network_id, variation_id,UserId);
+            purchaseData(phone, network_id, variation_id,UserId,response.reference);
           }
         });
         handler.openIframe();
@@ -85,7 +85,7 @@ const useGetData = () => {
       console.log('Error in payWithPaystack:', error);
     }
   }
-  async function purchaseData(phone, network_id,variation_id, UserId) {
+  async function purchaseData(phone, network_id,variation_id, UserId,paymentReference) {
     setisloading(true);
     try {
         const username = import.meta.env.VITE_VTU_USERNAME;
@@ -124,6 +124,42 @@ const useGetData = () => {
             description: error.message
         });
         setisloading(false);
+        refundPayment(paymentReference, amount);
+    }
+  }
+  
+  // HANDLE REFUND
+  async function refundPayment(reference, amount) {
+    try {
+      const url = `https://api.paystack.co/refund`;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_PAYSTACK_SECRET_KEY}`
+        },
+        body: JSON.stringify({
+          transaction: reference,
+          amount: amount * 100
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Refund response:', data);
+      toast({
+        title: 'Refund Initiated',
+        description: `Refund for transaction ${reference} has been initiated.`
+      });
+    } catch (error) {
+      console.error('Error initiating refund:', error);
+      toast({
+        title: 'Refund Error',
+        description: error.message
+      });
     }
   }
   

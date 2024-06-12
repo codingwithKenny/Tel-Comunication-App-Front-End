@@ -55,7 +55,7 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
                   if (onChange) onChange({ target: { name, value,price } });
                 }}
                   defaultValue={field.value}
-                disabled={readOnly}
+                // disabled={readOnly}
               >
                 <FormControl>
                   <SelectTrigger>
@@ -67,7 +67,7 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
                   {options?.map((opt, i) => (      // loop through option passed as props to genericforminput/ but the options props also carry array of options
                       <SelectGroup key={i}>
                       <SelectLabel>{opt.label}</SelectLabel>
-                      {opt?.options?.map((optopt, r) => (
+                      {opt.options?.map((optopt, r) => (
                         <SelectItem key={r} value={optopt.value}>
                           {optopt.label}
                         </SelectItem>
@@ -83,6 +83,8 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
       </div>
     );
   }
+
+  
 
   return null;
 };

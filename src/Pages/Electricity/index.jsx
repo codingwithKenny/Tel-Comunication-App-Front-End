@@ -3,6 +3,7 @@ import React from 'react'
 import DashboardHeader from '../Dashboard/component/DashboardHeader'
 import Sidebar from '../Dashboard/component/Sidebar'
 import ElectricityCompo from './component/Electricitycompo'
+import Text from '../BuyAirtime/component/text'
 
 const Electricity = () => {
   return (
@@ -10,6 +11,7 @@ const Electricity = () => {
         <DashboardHeader/>
 
         <Sidebar/>
+        <Text/>
         <ElectricityCompo/>
     
       
