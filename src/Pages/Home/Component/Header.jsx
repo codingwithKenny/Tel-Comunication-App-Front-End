@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css";
+import SelectLanguage from './SelectLanguage';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [showBars, setShowBars] = useState(false);
+  const { t } = useTranslation();
 
   function handleToggleBars() {
     setShowBars(!showBars);
@@ -17,39 +20,39 @@ const Header = () => {
         ) : (
           <i id='xicon' className="fa-solid fa-xmark"></i>
         )}
-        {showBars && <MobileNav />}
-        
+        {showBars && <MobileNav t={t} />}
       </div>
       <div className='logo'>
-        <Link to="/">Logo</Link>
+        <Link to="/"><img src="/logo.png" className='logo' alt="" /></Link>
       </div>
       <div className='bars'>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/feature">Feature</Link>
-        <Link to="/service">Service</Link>
-        <Link to="/contact">Contact Us</Link>
+        <Link to="/">{t('Home')}</Link>
+        <Link to="/about">{t('About')}</Link>
+        <Link to="/feature">{t('Feature')}</Link>
+        <Link to="/service">{t('Service')}</Link>
+        <Link to="/contact">{t('Contact Us')}</Link>
       </div>
       <div className='regButton'>
-        <button> <Link to="/auth">Login</Link></button>
-        <button>Register</button>
+        <button><Link to="/auth">Login</Link></button>
+        <button>{t("Register")}</button>
       </div>
-
-      
+      <div>
+        <SelectLanguage />
+      </div>
     </div>
   );
 };
 
 export default Header;
 
-function MobileNav() {
+function MobileNav({ t }) {
   return (
     <ul className='navitemmobile'>
-      <li><Link to="/" className='bar'>HOME</Link></li>
-      <li><Link to="/about" className='bar'>ABOUT</Link></li>
-      <li><Link to="/feature" className='bar'>FEATURE</Link></li>
-      <li><Link to="/service" className='bar'>SERVICE</Link></li>
-      <li><Link to="/contact" className='bar'>CONTACT US</Link></li>
+      <li><Link to="/" className='bar'>{t('Home')}</Link></li>
+      <li><Link to="/about" className='bar'>{t('About')}</Link></li>
+      <li><Link to="/feature" className='bar'>{t('Feature')}</Link></li>
+      <li><Link to="/service" className='bar'>{t('Service')}</Link></li>
+      <li><Link to="/contact" className='bar'>{t('Contact Us')}</Link></li>
     </ul>
   );
 }

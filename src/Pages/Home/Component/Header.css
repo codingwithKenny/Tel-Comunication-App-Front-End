@@ -8,7 +8,14 @@
     top: 0;
     background-color: white;
     z-index: 100;
+    box-shadow: 2px 2px 2px 2px rgb(211, 210, 210);
+    padding: 10px 0;
 
+  }
+  .logo{
+    width: 50px;
+    height: 50px;
+    transform: scale(1.5);
   }
   
   .bars a {
@@ -44,11 +51,12 @@
    }
   .regButton button {
     margin-left: 20px;
-    background-color: #00595F;
+    background-color: teal;
     border-radius: 20px;
     padding: 10px 20px;
     border: 0;
     color: white;
+    text-align: center;
   
   }
   .navitemmobile {

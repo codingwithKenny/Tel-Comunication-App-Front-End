@@ -4,6 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { route } from './Route/index.jsx'
+import './i18n'; // Import the i18n configuration
+
 import { Toaster } from './components/ui/toaster.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

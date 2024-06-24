@@ -5,7 +5,7 @@ import './DashboardHeader.css'
 const DashboardHeader = () => {
   return (
     <div>
-      <p className='roy'>RoyTech</p>
+      <p className='roy'>SwiftPay</p>
       
     </div>
   )

@@ -83,6 +83,27 @@
     position: fixed;
     overflow: hidden;
 }
+.messageus{
+    position: absolute;
+    position: fixed;
+    margin-top: 10px;
+}
+#whatsapp{
+    font-size: 40px;
+    background-color:  rgb(45, 142, 45);
+    border-radius: 50%;
+  
+    text-align: center;
+    
+    padding: 10px 12px;
+
+}
+.whatsapp{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
 
 
 

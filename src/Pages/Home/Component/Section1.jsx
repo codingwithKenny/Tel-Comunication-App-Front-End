@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import "./Section1.css"
+import { useTranslation } from 'react-i18next';
 
 const Section1 = () => {
+  const { t } = useTranslation();
 
   return (
     <div>
       <div className='section1container'>
         <div className='sectionLeft'>
-            <h1>WELCOME TO ROY</h1>
+            <h1>{t('DO IT SWIFTLY WITH SWIFTPAY')}</h1>
             <hr />
             <p>We are a telecommunication company that provide voice or data transmission services, such as; Mobile Data And Airtime (VTU) .</p>
             <button>Login</button>
@@ -15,7 +17,8 @@ const Section1 = () => {
         </div>
         <div className='section1Right'>
             <p>
-              <img src="https://res.cloudinary.com/termii-inc/image/upload/v1673519418/termii-new-website/landing-page/telcos_te3rqz.png" alt="" />
+            <div> <img src="./swiftlogo.jpg" alt=""  className=' swiftimg'/>
+              <img src="timage.png" alt="" className='timage'/></div>
             </p>
         </div>
        

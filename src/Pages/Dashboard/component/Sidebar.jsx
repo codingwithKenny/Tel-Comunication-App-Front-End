@@ -35,10 +35,14 @@ const Sidebar = () => {
                 <Link to={'/dashboard/buyairtime'}><li><i className="fa-solid fa-phone"></i><span>Buy Airtime</span></li></Link> 
                   <li><i className="fa-brands fa-cc-mastercard"></i><span>Fund wallet</span></li>
                   <Link to={'/dashboard/history'}>  <li><i className="fa-solid fa-hourglass-half"></i><span>Transaction History</span></li></Link>
-                    <Link to="/contact-support">
-                        <li><i className="fa-brands fa-cuttlefish"></i><span>Contact Support</span></li>
-                    </Link>
+                    
+                        <li><i className="fa-brands fa-cuttlefish"></i><a href='https://wa.link/esimge'>Contact Support</a></li>
+                    
                 </ul>
+               <div className='messageus'>
+               <a href='https://wa.link/esimge' className='chatLink'><i class="fa-brands fa-whatsapp" id='whatsapp'></i>chat us</a>
+               </div>
+              
                 <ul className='sidebardown'> 
                     <li><i className="fa-regular fa-user"></i><span> Profile</span></li>
                     <Link><li ><i className="fa fa-sign-out"></i><span onClick={handleLogout}> LogOut</span></li></Link>
