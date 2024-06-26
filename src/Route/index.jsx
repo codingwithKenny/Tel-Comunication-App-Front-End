@@ -11,6 +11,7 @@ import Airtime from "@/Pages/BuyAirtime";
 import AirtimeHistory from "@/Pages/BuyAirtime/component/AirtimeHistory";
 import Data from "@/Pages/BuyData";
 import Electricity from "@/Pages/Electricity";
+import Cable from "@/Pages/CableTv";
 
 
 export const route = createBrowserRouter([
@@ -65,6 +66,10 @@ export const route = createBrowserRouter([
             {
                 path:"electricity",
                 element:<Electricity/>
+            },
+            {
+                path:"cable",
+                element:<Cable/>
             },
         ]
     }

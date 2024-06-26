@@ -5,7 +5,7 @@ export const ElectrcityInput = [
         name: "meternumber",
         type: "text",
         required: true,
-        placeholder: "Enter phone number"
+        placeholder: "Enter meter number"
     },
     {
         label: 'Meter Type',

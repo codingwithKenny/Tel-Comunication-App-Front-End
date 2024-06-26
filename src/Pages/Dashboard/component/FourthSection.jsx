@@ -31,8 +31,10 @@ const FourthSection = () => {
     </div>
     <div className='whatRoyDO'>
         <div className='eachBox' >
+            <Link to={"/dashboard/cable"}>
             <img src="4.png" alt="" />
             <p>cable TV</p>
+            </Link>
         </div>
         <div className='eachBox' >
             <img src="7.png" alt="" />
