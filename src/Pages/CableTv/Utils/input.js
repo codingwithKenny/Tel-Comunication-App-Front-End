@@ -2,10 +2,11 @@
 export const cableInput = [
     {
         label: "SmartCard/IUC Number",
-        name: "SmartCard",
+        name: "smartCard",
         type: "text",
         required: true,
-        placeholder: "Enter smartcard number"
+        placeholder: "Enter smartcard number",
+       
     },
     {
         label: 'Cable Type',

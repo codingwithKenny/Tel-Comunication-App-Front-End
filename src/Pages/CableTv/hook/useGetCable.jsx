@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 const CableInputSchema = z.object({
-    SmartCard: z.string().min(10, "SmartCard number is required"),
+    smartCard: z.string().min(10, "SmartCard number is required"),
     cabletype: z.string().min(1, "cabletype is required"),
     package: z.string().min(1, "Electricity Company is required"),
   amount: z.string().min(1, "Amount is required"),
@@ -30,14 +30,14 @@ const useGetCable = () => {
     try {
       let values = form.getValues();
       let amount = values.amount;
-      let meterNumber = values.meternumber;
-      let metertype = values.metertype;
-      let Electricitycompany = values.electricitycompany;
+      let smartCard = values.smartCard;
+      let cabletype = values.cabletype;
+      let packages = values.package;
       let phone = values.phone;
       let userEmail = currentUser.email;
       let UserId = currentUser._id;
 
-      console.log('Initiating Paystack payment with:', { meterNumber, metertype, Electricitycompany, phone, amount, UserId });
+      console.log('Initiating Paystack payment with:', { smartCard, cabletype, packages, phone, amount, UserId });
       console.log(UserId);
 
       if (window.PaystackPop) {

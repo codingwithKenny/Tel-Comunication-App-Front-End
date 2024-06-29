@@ -5,6 +5,7 @@ import { AirtimeInput } from '../utils/input';
 import GenericFormInput from '@/Shared/GenericFormInput';
 import "./Airtimecompo.css";
 import { Button } from '@/components/ui/button';
+import Text from './text';
 
 const Airtimecompo = () => {
     const { onSubmit, form, checkNetwork,isLoading ,payWithPaystack} = useGetAirtime();

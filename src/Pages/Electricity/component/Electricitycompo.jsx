@@ -11,12 +11,7 @@ import { useGetCurrentUser } from '@/Shared/hook/useGetCurrentUser';
 const ElectricityCompo = () => {
     const{form,onSubmit , payWithPaystack} = useGetElectricity()
    
-   
-
-  
-   
-
-    return (
+   return (
         <div className="electricity">
             <Form {...form} >
                 <form onSubmit={form.handleSubmit(onSubmit)}>

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
-
 import GenericFormInput2 from '@/Shared/ElecGenericFormInput';
 import { cableInput } from '../Utils/input';
 import useGetCable from '../hook/useGetCable';

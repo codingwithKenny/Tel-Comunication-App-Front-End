@@ -5,7 +5,7 @@ export const AirtimeInput = [
         name:"phonenumber",
         type:"text",
         required:true,
-        placeholder:"PhoneNumber"
+        placeholder:"phoneNumber"
 
     },
     {
