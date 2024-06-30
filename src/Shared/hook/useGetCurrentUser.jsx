@@ -14,7 +14,7 @@ export const useGetCurrentUser = () => {
     }
 
     try {
-      const res = await axios.get("http://localhost:3000/checkAuth", {
+      const res = await axios.get("https://swiftpay-app-backend.onrender.com/checkAuth", {
         headers: { Authorization: "Bearer " + token },
       });
 
