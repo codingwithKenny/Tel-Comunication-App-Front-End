@@ -12,8 +12,8 @@ const Section1 = () => {
             <h1>{t('DO IT SWIFTLY WITH SWIFTPAY')}</h1>
             <hr />
             <p>We are a telecommunication company that provide voice or data transmission services, such as; Mobile Data And Airtime (VTU) .</p>
-            <button>Login</button>
-            <button>Register</button>
+            <button><Link to="/auth">Login</Link></button>
+            <button><Link to="/auth">Register</Link></button>
         </div>
         <div className='section1Right'>
             <p>
