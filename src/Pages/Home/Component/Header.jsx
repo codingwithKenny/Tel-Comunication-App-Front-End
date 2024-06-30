@@ -34,7 +34,7 @@ const Header = () => {
       </div>
       <div className='regButton'>
         <button><Link to="/auth">Login</Link></button>
-        <button><Link to="/auth">{t("Register")}</Link></button>
+        <button><Link to="/auth/signup">{t("Register")}</Link></button>
       </div>
       <div>
         <SelectLanguage />
