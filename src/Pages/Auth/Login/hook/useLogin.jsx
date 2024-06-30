@@ -33,7 +33,7 @@ const useLogin = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/login", data);
+      const res = await axios.post("https://swiftpay-app-backend.onrender.com/login", data);
       console.log(res);
 
       toast({

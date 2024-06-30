@@ -23,7 +23,7 @@ const useSignUp = () => {
         console.log(data)
 
         try {
-          const res = await axios.post("http://localhost:3000/signup", data)
+          const res = await axios.post("https://swiftpay-app-backend.onrender.com/signup", data)
           console.log(res)
           toast({
             title:"success",

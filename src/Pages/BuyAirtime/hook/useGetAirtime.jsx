@@ -127,7 +127,7 @@ async function purchaseAirtime(phone, network_id, amountToBuy, UserId, paymentRe
           phone:data.data.phone
       }
       console.log(transaction)
-      const saveResponse = await axios.post("http://localhost:3000/Airtime", transaction); 
+      const saveResponse = await axios.post("https://swiftpay-app-backend.onrender.com/Airtime", transaction); 
       console.log(saveResponse)
     
       setisloading(false);
