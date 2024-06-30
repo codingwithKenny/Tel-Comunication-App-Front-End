@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./Section1.css"
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Section1 = () => {
   const { t } = useTranslation();
