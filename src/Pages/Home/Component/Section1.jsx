@@ -14,7 +14,7 @@ const Section1 = () => {
             <hr />
             <p>We are a telecommunication company that provide voice or data transmission services, such as; Mobile Data And Airtime (VTU) .</p>
             <button><Link to="/auth">Login</Link></button>
-            <button><Link to="/auth">Register</Link></button>
+            <button><Link to="/auth/signup">Register</Link></button>
         </div>
         <div className='section1Right'>
             <p>
