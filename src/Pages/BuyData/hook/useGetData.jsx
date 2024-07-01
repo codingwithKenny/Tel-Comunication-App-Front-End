@@ -52,7 +52,7 @@ const useGetData = () => {
     try {
       let values = form.getValues();
       let network_id = values.network.toLowerCase().split(" ")[0];
-      let amount = values.amount.split("")[0];
+      let amount = values.amount.split(1);
       // let amountToBuy = values.amount;
       let variation_id = values.plan
       let phone = values.phonenumber;
