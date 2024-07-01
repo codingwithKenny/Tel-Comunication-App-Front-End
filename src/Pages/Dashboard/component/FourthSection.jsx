@@ -9,8 +9,11 @@ const FourthSection = () => {
    <div>
      <div className='whatRoyDO'>
         <div className='eachBox' >
+            <Link to={'/dashboard/buydata'}>
             <img src="/data.png" alt="" />
             <p>Buy Data</p>
+            </Link>
+            
         </div>
         <div className='eachBox' >
             <img src="2.png" alt="" />
@@ -37,8 +40,9 @@ const FourthSection = () => {
             </Link>
         </div>
         <div className='eachBox' >
-            <img src="7.png" alt="" />
-            <p>Network</p>
+            <Link to={'/dashboard/buyairtime'}> <img src="7.png" alt="" />
+            <p>Network</p></Link>
+           
         </div>
         <div className='eachBox' >
             <img src="6.png" alt="" />

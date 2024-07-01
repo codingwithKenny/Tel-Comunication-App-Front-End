@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import useGetData from '../hook/useGetData';
 import { DataInput } from '../utils/data';
 import "./Datacompo.css"
+import Info from '@/Pages/BuyAirtime/component/Info';
 
 const Datacompo = () => {
     const { onSubmit, form, checkNetwork,isLoading ,payWithPaystack} = useGetData();
@@ -96,6 +97,7 @@ const Datacompo = () => {
                             />
                         ))
                     }
+                    <Info/>
                     {
                         DataInput.slice(1, 2).map((input, i) => (
                             <GenericFormInput
