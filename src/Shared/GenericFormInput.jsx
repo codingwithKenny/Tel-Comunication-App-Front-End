@@ -32,7 +32,7 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
                 />
             
               </FormControl>
-              <FormMessage>{message}</FormMessage>
+              
              
             </FormItem>
           )}
@@ -78,7 +78,7 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
                   ))}
                 </SelectContent>
               </Select>
-            
+              <FormMessage className="errorMessage" />
             </FormItem>
           )}
         />
