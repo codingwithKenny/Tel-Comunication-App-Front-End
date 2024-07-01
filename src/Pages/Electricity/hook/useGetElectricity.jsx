@@ -53,7 +53,7 @@ const useGetElectricity = () => {
             let res = 'Payment complete! Reference: ' + response.reference;
             alert(res);
             console.log('Paystack response:', response);
-            console.log('Calling purchaseElectricity with:', { phone, amount, UserId });
+            console.log('Calling purchaseElectricity with:', {meterNumber, metertype, Electricitycompany, phone, amount, UserId, response.reference});
             purchaseElectricity(meterNumber, metertype, Electricitycompany, phone, amount, UserId, response.reference);
           }
         });
