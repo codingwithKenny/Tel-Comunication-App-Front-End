@@ -20,7 +20,7 @@ export const DataInput = [
         required: true,
         options: [
             {
-                label: 'MTN',
+                label: 'MTN Nigeria',
                 options: [
                     { label: 'MTN SME Data 500MB – 30 Days', value: "500" ,price:199},
                     { label: 'MTN SME Data 1GB – 30 Days', value: "M1024", price:339},
@@ -35,7 +35,7 @@ export const DataInput = [
                 ]
             },
             {
-                label: "Glo",
+                label: "Glo Mobile (Globacom Ltd)",
                 options: [
                     { label: "Glo Data 1GB – 5 Nights", value: "glo100x" ,price:99},
                     { label: "Glo Data 1.25GB – 1 Day (Sunday)", value: "glo200x" ,price:199},
@@ -51,7 +51,7 @@ export const DataInput = [
                 ]
             },
             {
-                label: "Airtel",
+                label: "Airtel Nigeria",
                 options: [
                     { label: "Airtel Data 500MB (Gift) – 30 Days", value: "AIRTEL500MB",price:199 },
                     { label: "Airtel Data 1GB (Gift) – 30 Days", value: "AIRTEL1GB",price:399 },

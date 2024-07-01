@@ -4,7 +4,9 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import React from 'react';
 import "./GenericFormInput.css";
 
-const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBlur, readOnly, onClick, options,price}) => {
+const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBlur, readOnly, onClick, options,price, network}) => {
+  const networkValue = form.getValues().network;
+  console.log(networkValue,'hyy')
   if (type === 'text'|| type === 'number') {
     return (
       <div>
@@ -66,16 +68,21 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
                 </FormControl>
                 <SelectContent className="selectContent">
 
-                  {options?.map((opt, i) => (      // loop through option passed as props to genericforminput/ but the options props also carry array of options
-                      <SelectGroup key={i}>
-                      <SelectLabel>{opt.label}</SelectLabel>
-                      {opt.options?.map((optopt, r) => (
-                        <SelectItem key={r} value={optopt.value}>
-                          {optopt.label}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  ))}
+                  {options?.map((opt, i) => {
+                    if(opt.label === networkValue){
+                      return(
+                        <SelectGroup key={i}>
+                        <SelectLabel>{opt.label}</SelectLabel>
+                        
+                        {opt.options?.map((optopt, r) => (
+                          <SelectItem key={r} value={optopt.value}>
+                            {optopt.label}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                      )
+                    }
+                  })}
                 </SelectContent>
               </Select>
               <FormMessage className="errorMessage" />
