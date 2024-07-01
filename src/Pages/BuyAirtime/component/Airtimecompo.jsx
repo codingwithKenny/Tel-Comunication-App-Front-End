@@ -6,6 +6,7 @@ import GenericFormInput from '@/Shared/GenericFormInput';
 import "./Airtimecompo.css";
 import { Button } from '@/components/ui/button';
 import Text from './text';
+import Info from './Info';
 
 const Airtimecompo = () => {
     const { onSubmit, form, checkNetwork,isLoading ,payWithPaystack} = useGetAirtime();
@@ -65,6 +66,7 @@ const Airtimecompo = () => {
                             />
                         ))
                     }
+                    <Info/>
                     {
                         AirtimeInput.slice(1, 2).map((input, i) => (
                             <GenericFormInput
