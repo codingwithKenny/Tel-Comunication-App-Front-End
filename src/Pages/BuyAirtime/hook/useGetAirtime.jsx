@@ -108,11 +108,11 @@ async function purchaseAirtime(phone, network_id, amountToBuy, UserId, paymentRe
 
       console.log('Purchasing airtime with:', { username, password, phone, network_id, amountToBuy, UserId });
 
-      const response = await fetch(url); // Changed to await
+      const response = await fetch(url); 
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const data = await response.json(); // Changed to await
+      const data = await response.json(); 
       console.log('Airtime purchase response:', data, data.message);
       toast({
         title: data?.code,

@@ -76,7 +76,7 @@ const useGetData = () => {
             alert(res);
             console.log('Paystack response:', response);
             console.log('Calling purchaseData with:', { phone, network_id, amount,UserId});
-            purchaseData(phone, network_id, variation_id,UserId,response.reference);
+            purchaseData(phone, network_id, variation_id,UserId,response.reference,amount);
           }
         });
         handler.openIframe();
@@ -85,14 +85,14 @@ const useGetData = () => {
       console.log('Error in payWithPaystack:', error);
     }
   }
-  async function purchaseData(phone, network_id,variation_id, UserId,paymentReference) {
+  async function purchaseData(phone, network_id,variation_id, UserId,paymentReference,amount) {
     setisloading(true);
     try {
         const username = import.meta.env.VITE_VTU_USERNAME;
         const password = import.meta.env.VITE_VTU_PASSWORD;
         const url = `https://vtu.ng/wp-json/api/v1/data?username=${username}&password=${password}&phone=${phone}&network_id=${network_id}&variation_id=${variation_id}&currentUserId=${UserId}`;
   
-        console.log('Purchasing data with:', { username, password, phone, network_id, variation_id, UserId });
+        console.log('Purchasing data with:', { username, password, phone, network_id, variation_id, UserId,amount });
   
         const response = await fetch(url);
         if (!response.ok) {
