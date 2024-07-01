@@ -30,7 +30,7 @@ const Sidebar = () => {
             <div className="sidebarContainer">
                 <div className='fix1'>
                 <ul className='top'>
-                    <li><i className="fa-solid fa-house-chimney"></i><span>DashBoard</span></li>
+                   <Link to={"/dashboard"}> <li><i className="fa-solid fa-house-chimney"></i><span>DashBoard</span></li></Link>
                     <Link to={'/dashboard/buydata'}> <li><i className="fa-solid fa-signal"></i><span>Buy Data</span></li></Link>
                 <Link to={'/dashboard/buyairtime'}><li><i className="fa-solid fa-phone"></i><span>Buy Airtime</span></li></Link> 
                   <li><i className="fa-brands fa-cc-mastercard"></i><span>Fund wallet</span></li>
