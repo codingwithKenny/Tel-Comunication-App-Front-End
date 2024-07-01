@@ -42,7 +42,7 @@ const useGetElectricity = () => {
 
       if (window.PaystackPop) {
         let handler = window.PaystackPop.setup({
-          key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
+          key: import.meta.env.VITE_PAYSTACK_PUBLIC_TEST_KEY,
           email: userEmail,
           amount: amount * 100,
           ref: Math.floor(Math.random() * 1000000000 + 1),
@@ -53,7 +53,7 @@ const useGetElectricity = () => {
             let res = 'Payment complete! Reference: ' + response.reference;
             alert(res);
             console.log('Paystack response:', response);
-            console.log('Calling purchaseElectricity with:', {meterNumber, metertype, Electricitycompany, phone, amount, UserId, response.reference});
+            console.log('Calling purchaseElectricity with:', {meterNumber, metertype, Electricitycompany, phone, amount, UserId});
             purchaseElectricity(meterNumber, metertype, Electricitycompany, phone, amount, UserId, response.reference);
           }
         });
@@ -68,13 +68,13 @@ const useGetElectricity = () => {
     try {
       const username = import.meta.env.VITE_VTU_USERNAME;
       const password = import.meta.env.VITE_VTU_PASSWORD;
-      const url = `https://vtu.ng/wp-json/api/v1/electricity?username=${username}&password=${password}&meterNumber=${meterNumber}&metertype=${metertype}&Electricitycompany=${Electricitycompany}&phone=${phone}&amount=${amount}&currentUserId=${UserId}`;
-
-      console.log('Purchasing data with:', { meterNumber, metertype, Electricitycompany, phone, amount, UserId });
+      const url = `https://vtu.ng/wp-json/api/v1/electricity?username=${username}&password=${password}&phone=${phone}&meter_number=${meterNumber}&service_id=${Electricitycompany}&variation_id=${metertype}&amount=${amount}&currentUserId=${UserId}`;
+      // https://vtu.ng/wp-json/api/v1/electricity?username=Frank&password=123456&phone=07045461790&meter_number=62418234034&service_id=ikeja-electric&variation_id=prepaid&amount=3000
+      console.log('Purchasing with:', { username,password, meterNumber, metertype, Electricitycompany, phone, amount, UserId });
 
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
       console.log('data purchase response:', data, data.message);
