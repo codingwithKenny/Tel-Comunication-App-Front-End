@@ -1,5 +1,5 @@
 import React from 'react'
-import"/TextElect.css"
+import"./TextElect.css"
 
 const TextElect = () => {
   return (
