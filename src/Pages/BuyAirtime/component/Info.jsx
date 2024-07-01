@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const Info = () => {
   return (
     <div>
-        <span>Must include Country code</span>
-        <p>Format: 2348106114218</p>
-      
+      <span className="text-teal-500">Must include Country code</span>
+      <p className="text-teal-500 text-sm">Format: 2348106114218</p>
     </div>
-  )
-}
+  );
+};
 
-export default Info
+export default Info;
