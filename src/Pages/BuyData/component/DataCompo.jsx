@@ -56,7 +56,7 @@ const Datacompo = () => {
                     }
                   opt.options.forEach(optopt =>{
                     if(optopt.value === planValue){
-                      planPrice =optopt.price
+                      planPrice = '#' + optopt.price
                         
                     }
                   
