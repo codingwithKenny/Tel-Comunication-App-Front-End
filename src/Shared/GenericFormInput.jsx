@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import React from 'react';
 import "./GenericFormInput.css";
 
-const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBlur, readOnly, onClick, options,price,message }) => {
+const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBlur, readOnly, onClick, options,price}) => {
   if (type === 'text'|| type === 'number') {
     return (
       <div>
@@ -78,7 +78,7 @@ const GenericFormInput = ({ form, label, name, type, placeholder, onChange, onBl
                   ))}
                 </SelectContent>
               </Select>
-              <FormMessage className="errorMessage" />
+            
             </FormItem>
           )}
         />
