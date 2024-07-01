@@ -96,8 +96,7 @@ const useGetData = () => {
   
         const response = await fetch(url);
         if (!response.ok) {
-           Error(`HTTP error! status: ${response.status}`);
-            console.log(response.status)
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json(); 
         console.log('data purchase response:', data, data.message);
