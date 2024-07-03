@@ -11,7 +11,7 @@ export const DataInput = [
         name: "network",
         type: "text",
         required: true,
-        // readOnly: true
+        readOnly: true
     },
     {
         label: 'Plan',
